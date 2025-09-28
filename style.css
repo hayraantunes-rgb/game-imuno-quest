@@ -1,0 +1,362 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Imagem do tabuleiro como fundo da página, ocupando a tela toda */
+    background-image: url('imagens/tabuleiro.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Escurece a imagem de fundo para maior visibilidade do conteúdo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece a imagem para destacar o conteúdo */
+    z-index: 1;
+}
+
+.container {
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: none;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #006400;
+}
+
+/* Telas do jogo */
+.screen {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Estilo do conteúdo das telas de menu e jogadores */
+.players-content {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Fundo da tela de menu e seleção de jogadores */
+#menu-screen, #players-screen {
+    background-image: url('imagens/Fundo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Container principal do jogo para layout em duas colunas */
+#game-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-end; /* Alinha o placar à direita */
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Estilo do tabuleiro em tela cheia (quase) */
+#game-board {
+    width: 75%; /* Ocupa a maior parte da largura da tela */
+    height: 100vh; 
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* NOVO: Estilo para as informações do jogo sem fundo branco */
+#game-info {
+    width: 25%;
+    height: 100vh;
+    padding: 20px;
+    border-radius: 0; 
+    background-color: transparent; /* Fundo transparente */
+    box-shadow: none; /* Remove a sombra */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+/* Estilo para o placar dos jogadores com fundo */
+#player-status-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: white;
+}
+#player-status {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.player-card {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.player-card h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+}
+.player-card p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Casas do tabuleiro (as bolinhas) */
+.cell {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+    border: 3px solid #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    z-index: 5; /* Garante que as casas ficam sobre o caminho */
+}
+
+.cell:hover {
+    transform: scale(1.15);
+}
+
+/* NOVO: Linhas que ligam as casas */
+.path-line {
+    position: absolute;
+    background-color: white;
+    height: 5px;
+    z-index: 4; /* Fica por baixo das casas */
+}
+
+/* Posições das casas em formato de grelha com espaçamento aumentado */
+#cell-0 { top: 85%; left: 10%; background-color: #20b2aa; border: 3px solid #FFD700; }
+#cell-0::before {
+    content: "Início";
+    position: absolute;
+    top: -25px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Primeira linha */
+#cell-1 { top: 85%; left: 22%; }
+#cell-2 { top: 85%; left: 34%; }
+#cell-3 { top: 85%; left: 46%; }
+#cell-4 { top: 85%; left: 58%; }
+#cell-5 { top: 85%; left: 70%; }
+
+/* Segunda linha (sentido oposto) */
+#cell-6 { top: 70%; left: 70%; }
+#cell-7 { top: 70%; left: 58%; }
+#cell-8 { top: 70%; left: 46%; }
+#cell-9 { top: 70%; left: 34%; }
+#cell-10 { top: 70%; left: 22%; }
+#cell-11 { top: 70%; left: 10%; }
+
+/* Terceira linha (sentido original) */
+#cell-12 { top: 55%; left: 10%; }
+#cell-13 { top: 55%; left: 22%; }
+#cell-14 { top: 55%; left: 34%; }
+#cell-15 { top: 55%; left: 46%; }
+#cell-16 { top: 55%; left: 58%; }
+#cell-17 { top: 55%; left: 70%; }
+
+/* Quarta linha (sentido oposto) */
+#cell-18 { top: 40%; left: 70%; }
+#cell-19 { top: 40%; left: 58%; }
+#cell-20 { top: 40%; left: 46%; }
+#cell-21 { top: 40%; left: 34%; }
+#cell-22 { top: 40%; left: 22%; }
+#cell-23 { top: 40%; left: 10%; }
+
+/* Quinta linha (sentido original) */
+#cell-24 { top: 25%; left: 10%; }
+#cell-25 { top: 25%; left: 22%; }
+#cell-26 { top: 25%; left: 34%; }
+#cell-27 { top: 25%; left: 46%; }
+#cell-28 { top: 25%; left: 58%; }
+
+/* Casa Final (Fim) */
+#cell-29 { top: 25%; left: 70%; background-color: #daa520; border: 3px solid #FFD700; }
+#cell-29::before {
+    content: "Fim";
+    position: absolute;
+    top: -25px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Estilo para as peças dos jogadores */
+.cell .player-token {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 2px;
+    border: 1px solid white;
+}
+
+/* Classes de cor com transparência e cores que combinam com o tabuleiro */
+.cell-V { background-color: #20b2aa; }
+.cell-P { background-color: #708090; }
+.cell-M { background-color: #b22222; }
+.cell-E { background-color: #daa520; }
+
+/* Estilo da caixa de perguntas */
+.question-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.question-box p {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Informações do jogo e botões */
+#dice-display {
+    font-size: 2em;
+    font-weight: bold;
+    color: #a020f0;
+    margin-bottom: 15px;
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.option-btn {
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: #000;
+}
+
+.option-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.correct-answer {
+    background-color: #90ee90;
+    border-color: #006400;
+}
+
+.wrong-answer {
+    background-color: #ff6347;
+    border-color: #a020f0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d00;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilo para a mensagem de feedback (resposta correta/incorreta) */
+#feedback-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+#feedback-message.show {
+    opacity: 1;
+}

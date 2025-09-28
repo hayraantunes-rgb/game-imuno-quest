@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imuno Quest - Missão Saúde!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menu-screen" class="screen active">
+        <div class="players-content">
+            <h1>Imuno Quest</h1>
+            <button id="start-game-btn">Começar Jogo</button>
+        </div>
+    </div>
+
+    <div id="players-screen" class="screen">
+        <div class="players-content">
+            <h2>Quantos jogadores?</h2>
+            <p class="game-rules">
+                Bem-vindo ao Imuno Quest! O primeiro a chegar no final do tabuleiro e coletar 3 selos de Vacina e 2 de Prevenção vence. Use o dado para se mover e responda as perguntas em cada casa.
+            </p>
+            <div id="player-selection-options">
+                <button class="player-count-btn" data-players="2">2 Jogadores</button>
+                <button class="player-count-btn" data-players="3">3 Jogadores</button>
+                <button class="player-count-btn" data-players="4">4 Jogadores</button>
+            </div>
+            
+            <div id="player-names-input" class="hidden">
+                <h3>Nomes dos Jogadores</h3>
+                <div id="names-container"></div>
+                <button id="start-names-btn">Começar o Jogo</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="game-container">
+            <div id="game-board"></div>
+            <div id="game-info">
+                <div id="player-status-container">
+                    <div id="player-status"></div>
+                </div>
+                <div id="dice-display"></div>
+                <button id="roll-dice-btn">Lançar o Dado</button>
+                
+                <div class="question-box hidden">
+                    <div id="question-area">
+                        <h3 id="question-title"></h3>
+                        <p id="question-text"></p>
+                        <div id="options-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="victory-screen" class="screen">
+        <div class="players-content">
+            <h2 id="victory-message"></h2>
+            <p>Parabéns por completar a missão! A sua dedicação ajuda a proteger a sua saúde e a de todos ao seu redor!</p>
+            <button id="restart-game-btn">Jogar de Novo</button>
+        </div>
+    </div>
+
+    <div id="feedback-message" class="hidden"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
