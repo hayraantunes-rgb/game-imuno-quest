@@ -181,8 +181,8 @@ const questions = [
     {
         type: "V",
         text: "Quem nunca tomou vacina da febre amarela deve:",
-        options: ["Se vacinar se morar em área de risco", "Não se preocupar", "Tomar só vitamina C", "Esperar ficar doente"],
-        answer: "Se vacinar se morar em área de risco"
+        options: ["Se vacinar ", "Não se preocupar", "Tomar só vitamina C", "Esperar ficar doente"],
+        answer: "Se vacinar"
     },
     {
         type: "V",
@@ -257,245 +257,245 @@ const questions = [
         answer: "Proteger você e quem está ao seu redor"
     },
 
-    // --- PERGUNTAS DE MITO OU VERDADE (E) ---
+    // --- PERGUNTAS DE MITO OU VERDADE (M) ---
     {
-        type: "E",
+        type: "M",
         text: "O mosquito da dengue só nasce em água suja.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "Quem já pegou dengue nunca mais pega de novo.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "A zika pode causar problemas nos bebês de grávidas.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "Tomar vitamina C evita dengue.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "O mosquito da dengue também transmite febre amarela urbana.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "Só pessoas pobres podem pegar dengue.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "Quem mora em apartamento não precisa se preocupar com mosquito.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "A febre amarela pode matar se não for tratada.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "A zika pode ser transmitida por relação sexual.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "Chá caseiro cura dengue.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "A vacina da febre amarela é de graça no posto de saúde.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "O fumacê sozinho acaba com os mosquitos.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "Uma tampinha de garrafa com água pode virar criadouro de mosquito.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "Quem já vacinou contra febre amarela está protegido para a vida inteira (na maioria dos casos).",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "A dengue pode ficar grave e causar sangramentos.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "O mosquito só aparece no verão.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "Colocar areia nos pratinhos das plantas ajuda na prevenção.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "A febre amarela passa de uma pessoa para outra.",
         options: ["Mito", "Verdade"],
         answer: "Mito"
     },
     {
-        type: "E",
+        type: "M",
         text: "Usar repelente ajuda a se proteger de dengue, zika e febre amarela.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
     {
-        type: "E",
+        type: "M",
         text: "Deixar o lixo bem tampado ajuda a evitar o mosquito.",
         options: ["Mito", "Verdade"],
         answer: "Verdade"
     },
 
-    // --- PERGUNTAS DE EMERGÊNCIA (M) ---
+    // --- PERGUNTAS DE EMERGÊNCIA (E) ---
     {
-        type: "M",
+        type: "E",
         text: "João tem febre alta, dor de cabeça e dor no corpo. O que pode ser?",
         options: ["Dengue", "Dor de estômago", "Resfriado", "Asma"],
         answer: "Dengue"
     },
     {
-        type: "M",
+        type: "E",
         text: "Maria, grávida, tem manchas vermelhas pelo corpo e febre baixa. Qual doença pode ser?",
         options: ["Zika", "Dengue", "Gripe", "Catapora"],
         answer: "Zika"
     },
     {
-        type: "M",
+        type: "E",
         text: "Um viajante volta da Amazônia com febre alta e pele amarelada. O que pode ser?",
         options: ["Febre amarela", "Dengue", "Zika", "Resfriado"],
         answer: "Febre amarela"
     },
     {
-        type: "M",
+        type: "E",
         text: "Pedro sente dor atrás dos olhos e muito cansaço. Qual a suspeita?",
         options: ["Dengue", "Sinusite", "Zika", "Hepatite"],
         answer: "Dengue"
     },
     {
-        type: "M",
+        type: "E",
         text: "Uma gestante pega zika. Qual risco para o bebê?",
         options: ["Microcefalia", "Obesidade", "Alergia", "Diabetes"],
         answer: "Microcefalia"
     },
     {
-        type: "M",
+        type: "E",
         text: "Ana tem dengue e começa a sangrar pela gengiva. Isso indica:",
         options: ["Dengue grave", "Gripe", "Zika", "Sinusite"],
         answer: "Dengue grave"
     },
     {
-        type: "M",
+        type: "E",
         text: "José tem febre amarela e sua pele ficou amarelada. O que aconteceu?",
         options: ["Fígado foi afetado", "Gripe forte", "Intoxicação alimentar", "Falta de sol"],
         answer: "Fígado foi afetado"
     },
     {
-        type: "M",
+        type: "E",
         text: "Qual exame ajuda a confirmar dengue?",
         options: ["Teste rápido de sangue", "Raio-X", "Ultrassom", "Endoscopia"],
         answer: "Teste rápido de sangue"
     },
     {
-        type: "M",
+        type: "E",
         text: "Se uma pessoa com dengue tomar aspirina, o que pode acontecer?",
         options: ["Aumentar risco de sangramento", "Melhorar rápido", "Nada", "Curar a doença"],
         answer: "Aumentar risco de sangramento"
     },
     {
-        type: "M",
+        type: "E",
         text: "Qual é o tratamento correto para dengue, zika e febre amarela?",
         options: ["Beber bastante água e procurar médico", "Tomar antibiótico em casa", "Chá de ervas apenas", "Esperar passar sozinho"],
         answer: "Beber bastante água e procurar médico"
     },
     {
-        type: "M",
+        type: "E",
         text: "Um adolescente tem febre forte e dor abdominal. O que fazer?",
         options: ["Levar ao hospital", "Dar chá em casa", "Esperar 3 dias", "Ignorar"],
         answer: "Levar ao hospital"
     },
     {
-        type: "M",
+        type: "E",
         text: "Em epidemia de zika, quem precisa de mais cuidado?",
         options: ["Gestantes", "Idosos", "Crianças", "Homens adultos"],
         answer: "Gestantes"
     },
     {
-        type: "M",
+        type: "E",
         text: "Carlos tem febre amarela grave. Onde deve ser tratado?",
         options: ["Hospital", "Em casa", "Farmácia", "Escola"],
         answer: "Hospital"
     },
     {
-        type: "M",
+        type: "E",
         text: "Sofia está com zika. Quais sintomas são mais comuns?",
         options: ["Manchas na pele e coceira", "Tosse seca", "Dor de garganta", "Dor no estômago"],
         answer: "Manchas na pele e coceira"
     },
     {
-        type: "M",
+        type: "E",
         text: "Se alguém suspeita de dengue, qual atitude é correta?",
         options: ["Procurar médico e não se automedicar", "Tomar qualquer remédio", "Ignorar sintomas", "Fazer exercício físico"],
         answer: "Procurar médico e não se automedicar"
     },
     {
-        type: "M",
+        type: "E",
         text: "Qual sintoma é mais típico da zika do que da dengue?",
         options: ["Coceira intensa", "Febre alta", "Dor de cabeça forte", "Sangramento"],
         answer: "Coceira intensa"
     },
     {
-        type: "M",
+        type: "E",
         text: "Quem tomou vacina da febre amarela ainda precisa se proteger contra:",
         options: ["Dengue e zika", "Gripe", "Covid-19", "Catapora"],
         answer: "Dengue e zika"
     },
     {
-        type: "M",
+        type: "E",
         text: "Um adolescente tem febre súbita e dor forte no corpo. Vive em bairro com focos de mosquito. Qual a suspeita?",
         options: ["Dengue", "Asma", "Resfriado", "Otite"],
         answer: "Dengue"
     },
     {
-        type: "M",
+        type: "E",
         text: "Uma grávida nunca teve dengue. Qual cuidado deve ter?",
         options: ["Evitar picadas do mosquito", "Não ir ao médico", "Tomar vacina da dengue", "Comer menos sal"],
         answer: "Evitar picadas do mosquito"
     },
     {
-        type: "M",
+        type: "E",
         text: "Paciente com febre amarela grave precisa de:",
         options: ["Internação e cuidados intensivos", "Chá caseiro", "Antibiótico simples", "Só repouso em casa"],
         answer: "Internação e cuidados intensivos"
@@ -844,4 +844,5 @@ function resetGame() {
     
     // Volta para a tela de seleção de jogadores
     showScreen('players-screen');
+
 }
